@@ -8,6 +8,10 @@ body, html {
     width: 400px;
 }
 
+.error{
+    color: red
+}
+
 table, td, th {
     border: 1px solid #aaa;
 }
