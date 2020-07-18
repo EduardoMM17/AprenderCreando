@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Inicio</title>
+<h1> ESTA ES LA PÁGINA PRINCIPAL DE LAS TAREAS, MODIFICANLA COMO QUIERAN</h1>
+{% endblock %}
+{% block body %}
+<div class="content">
+    <table>
+        <tr>
+            <th>Tarea</th>
+            <th>Agregado</th>
+            <th>Acciones</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.content }}</td>
+                <!-- MOSTAR LA FECHA DEL TASK-->
+                <td></td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <!--COMPLETAR, PARECIDO AL DELETE -->
+                    <a href="">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/tareas" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task">
+    </form>
+</div>
+{% endblock %}
